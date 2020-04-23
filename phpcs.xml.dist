@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="Symfony2">
-    <config name="installed_paths" value="../../../vendor/escapestudios/symfony2-coding-standard,../../../src/HolmesMedia, ../vendor/holmesmedia/quality-tools"/>
+    <config name="installed_paths" value="../../../vendor/escapestudios/symfony2-coding-standard,../../../HolmesMedia,../../../vendor/holmesmedia/quality-tools"/>
     <description>Sniffs for Symfony2 coding standard</description>
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/docs/*</exclude-pattern>
@@ -16,7 +16,6 @@
         <!-- exclude superfluous whitespace because it moans about the empty lines in phpdoc ("* " lines) -->
         <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace"/>
     </rule>
-    <rule ref="Symfony"/>
     <rule ref="HolmesMedia"/>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
