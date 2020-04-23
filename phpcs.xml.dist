@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="Symfony2">
-    <config name="installed_paths" value="../../../vendor/escapestudios/symfony2-coding-standard,../../../HolmesMedia,../../../vendor/holmesmedia/quality-tools"/>
-    <description>Sniffs for Symfony2 coding standard</description>
+    <config name="installed_paths" value="../../../vendor/escapestudios/symfony2-coding-standard,../../../HolmesMedia,../../../vendor/holmesmedia/quality-tools,../../../vendor/slevomat/coding-standard"/>
+    <description>Sniffs for Symfony coding standard</description>
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/docs/*</exclude-pattern>
     <exclude-pattern>*/.git/*</exclude-pattern>
@@ -11,12 +11,20 @@
     <exclude-pattern>*/.idea/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
-    <rule ref="PSR1"/>
-    <rule ref="PSR2">
-        <!-- exclude superfluous whitespace because it moans about the empty lines in phpdoc ("* " lines) -->
-        <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace"/>
-    </rule>
+    <rule ref="PSR12"/>
     <rule ref="HolmesMedia"/>
+    <rule ref="SlevomatCodingStandard">
+        <exclude name="SlevomatCodingStandard.Commenting.UselessInheritDocComment" />
+        <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing" />
+        <exclude name="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment" />
+         <!--<exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment" />-->
+        <exclude name="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces" />
+        <exclude name="SlevomatCodingStandard.ControlStructures" />
+        <exclude name="SlevomatCodingStandard.Files" />
+        <exclude name="SlevomatCodingStandard.Namespaces" />
+        <exclude name="SlevomatCodingStandard.Operators" />
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax" />
+    </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
     <rule ref="Generic.Functions.CallTimePassByReference"/>
@@ -30,39 +38,61 @@
     <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
     <rule ref="Squiz.Scope.MemberVarScope"/>
 
-    <!-- We provide our own subclass of PEAR's ClassComment and FunctionComment sniff, but these will do: -->
-    <rule ref="PEAR.Commenting.InlineComment"/>
-
-    <!-- Import Zend coding standard (which in turn imports PEAR) -->
-    <rule ref="Zend">
-        <!-- but exclude their code analyzer -->
-        <exclude name="Zend.Debug.CodeAnalyzer"/>
-
-        <!-- covered by Squiz ControlSignature, which enforces try/catch as well -->
-        <exclude name="PEAR.ControlStructures.ControlSignature"/>
-
-        <exclude name="PEAR.Commenting.FunctionComment.SpacingBeforeTags"/>
-
-        <!-- do not check line length -->
-        <exclude name="Generic.Files.LineLength"/>
+    <!--<rule ref="Squiz.Commenting.FunctionComment" />-->
+    <!--<rule ref="Squiz.Commenting.FunctionCommentThrowTag" />-->
+    <!--<rule ref="Squiz.Commenting.ClassComment" />-->
+    <!--<rule ref="Squiz.Commenting.FileComment" />-->
+    <!--<rule ref="Squiz.Commenting.VariableComment" />-->
+    <rule ref="Squiz.Strings.ConcatenationSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="1"/>
+            <property name="spacing" value="1"/>
+        </properties>
     </rule>
 
-    <!-- Don't enforce Zend's private member underscores -->
-    <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore">
-        <severity>0</severity>
+    <rule ref="./vendor/escapestudios/symfony2-coding-standard/Symfony">
+        <exclude name="PEAR.Commenting.ClassComment"/>
+        <exclude name="Symfony.Arrays"/>
+        <exclude name="Symfony.Classes"/>
+        <!--<exclude name="Symfony.Commenting"/>-->
+        <exclude name="Symfony.Commenting.License"/>
+        <exclude name="Symfony.Commenting.ClassComment"/>
+        <exclude name="Symfony.Commenting.FunctionComment"/>
+        <exclude name="Symfony.ControlStructure"/>
+        <exclude name="Symfony.Errors"/>
+        <exclude name="Symfony.Files"/>
+        <exclude name="Symfony.Formatting"/>
+        <exclude name="Symfony.Functions"/>
+        <exclude name="Symfony.NamingConventions"/>
+        <exclude name="Symfony.Objects"/>
+        <exclude name="Symfony.Whitespace"/>
     </rule>
 
-    <!-- Ignore variables that contains numbers -->
-    <rule ref="Zend.NamingConventions.ValidVariableName.ContainsNumbers">
-        <severity>0</severity>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="130" />
+            <property name="absoluteLineLimit" value="150" />
+        </properties>
     </rule>
 
-    <!-- In practice, Symfony2 spaces multiline function calls differently than Zend -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="newlinesCountBetweenOpenTagAndDeclare" type="integer" value="2"/>
+            <property name="spacesCountAroundEqualsSign" type="integer" value="0"/>
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+        <properties>
+            <property name="allAnnotationsAreUseful" type="bool" value="true"/>
+        </properties>
+    </rule>
+
     <rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket">
         <severity>0</severity>
     </rule>
 
-    <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine">
+    <rule ref="PEAR.Commenting.ClassComment">
         <severity>0</severity>
     </rule>
 
@@ -72,17 +102,5 @@
 
     <rule ref="PEAR.Functions.FunctionCallSignature.CloseBracketLine">
         <severity>0</severity>
-    </rule>
-
-    <rule ref="Symfony.Commenting.FunctionComment.MissingParamComment">
-        <severity>0</severity>
-    </rule>
-
-    <rule ref="Symfony.Commenting.FunctionComment.SpacingBeforeTags">
-        <severity>0</severity>
-    </rule>
-
-    <rule ref="Symfony.Commenting.ClassComment.SpacingBeforeTags">
-        <message>There should always be a description, followed by a blank line, before the tags of a class comment.</message>
     </rule>
 </ruleset>
