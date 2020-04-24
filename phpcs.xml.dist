@@ -24,6 +24,7 @@
         <exclude name="SlevomatCodingStandard.Namespaces" />
         <exclude name="SlevomatCodingStandard.Operators" />
         <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax" />
+        <exclude name="SlevomatCodingStandard.Commenting.RequireOneLineDocComment.MultiLineDocComment" />
     </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
