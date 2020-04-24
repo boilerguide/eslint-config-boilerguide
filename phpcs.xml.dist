@@ -25,6 +25,9 @@
         <exclude name="SlevomatCodingStandard.Operators" />
         <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax" />
         <exclude name="SlevomatCodingStandard.Commenting.RequireOneLineDocComment.MultiLineDocComment" />
+        <exclude name="SlevomatCodingStandard.Whitespaces.DuplicateSpaces.DuplicateSpaces" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming.SuperfluousPrefix" />
     </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
@@ -51,7 +54,7 @@
         </properties>
     </rule>
 
-    <rule ref="./vendor/escapestudios/symfony2-coding-standard/Symfony">
+    <rule ref="Symfony">
         <exclude name="PEAR.Commenting.ClassComment"/>
         <exclude name="Symfony.Arrays"/>
         <exclude name="Symfony.Classes"/>
@@ -67,6 +70,7 @@
         <exclude name="Symfony.NamingConventions"/>
         <exclude name="Symfony.Objects"/>
         <exclude name="Symfony.Whitespace"/>
+        <exclude name="Symfony.Commenting.Annotations.Invalid"/>
     </rule>
 
     <rule ref="Generic.Files.LineLength">
