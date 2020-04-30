@@ -28,6 +28,9 @@
         <exclude name="SlevomatCodingStandard.Whitespaces.DuplicateSpaces.DuplicateSpaces" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming.SuperfluousPrefix" />
+        <exclude name="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation.ImplicitArrayCreationUsed" />
+        <exclude name="SlevomatCodingStandard.Functions.StrictCall.StrictParameterMissing" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
     </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
@@ -106,6 +109,10 @@
     </rule>
 
     <rule ref="PEAR.Functions.FunctionCallSignature.CloseBracketLine">
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace">
         <severity>0</severity>
     </rule>
 </ruleset>
