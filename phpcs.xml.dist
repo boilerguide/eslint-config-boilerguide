@@ -31,6 +31,7 @@
         <exclude name="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation.ImplicitArrayCreationUsed" />
         <exclude name="SlevomatCodingStandard.Functions.StrictCall.StrictParameterMissing" />
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
     </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
