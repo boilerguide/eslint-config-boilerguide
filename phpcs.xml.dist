@@ -32,6 +32,7 @@
         <exclude name="SlevomatCodingStandard.Functions.StrictCall.StrictParameterMissing" />
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
     </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
