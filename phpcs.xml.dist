@@ -34,6 +34,8 @@
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification" />
+        <exclude name="SlevomatCodingStandard.PHP.RequireExplicitAssertion.RequiredExplicitAssertion" />
+        <exclude name="SlevomatCodingStandard.PHP.UselessParentheses" />
     </rule>
     <rule ref="Generic.ControlStructures.InlineControlStructure"/>
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
