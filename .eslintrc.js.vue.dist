@@ -3,7 +3,11 @@ module.exports = {
     'eslint:recommended',
     'plugin:vue/recommended',
   ],
-
+  env: {
+      'es6': true,
+      'node': true,
+      'browser': true
+  },
   rules: {
     // Eslint rule modifications
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
