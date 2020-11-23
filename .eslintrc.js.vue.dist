@@ -15,17 +15,19 @@ module.exports = {
     'no-new-func': 'error',
     'prefer-arrow-callback': 'error',
     'arrow-body-style': ['error', 'as-needed'],
+    'arrow-spacing': 'error',
     'new-cap': 'error',
     'no-eval': 'error',
     'no-implied-eval': 'error',
     'eqeqeq': 'error',
     'no-with': 'error',
+    'no-warning-comments': 'error',
     'max-len': ["error", {"code": 170}],
     'no-unused-expressions': ['error', { 'allowTernary': true }],
     'no-param-reassign': 'error',
     'quote-props': ['error', 'consistent'],
     // vue rule modification
-    "vue/order-in-components": ["off", {
+    "vue/order-in-components": ["error", {
       "order": [
         "el",
         "name",
@@ -77,9 +79,11 @@ module.exports = {
       'ignores': []
     }],
     'vue/html-indent': ['error', 2, {
-      'baseIndent': 0,
-      'switchCase': 1,
-      'ignores': []
+      "attribute": 1,
+      "baseIndent": 1,
+      "closeBracket": 0,
+      "alignAttributesVertically": true,
+      "ignores": []
     }],
     "vue/component-name-in-template-casing": ["error", "kebab-case", {
       "registeredComponentsOnly": true,
@@ -88,7 +92,10 @@ module.exports = {
 
     //Disabled permanently
     'vue/require-prop-types': 'off',
+    'vue/no-template-shadow': 'off',
+    'vue/no-v-html': 'off',
     'vue/max-attributes-per-line': 'off',
+    'vue/attribute-hyphenation': 'off',
     'prefer-destructuring': 'off',
     'import/no-unresolved': 'off',
     'no-invalid-this': 'off',
