@@ -1,5 +1,5 @@
 {
-  "devDependencies": {
+  "dependencies": {
     "eslint-plugin-vue": "^6.1.2"
   },
   "peerDependencies": {
