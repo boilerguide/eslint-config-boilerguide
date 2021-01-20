@@ -1,9 +1,10 @@
 {
+  "version": "0.0.2",
   "dependencies": {
     "eslint-plugin-vue": "^6.1.2",
     "babel-eslint": "^10.0.3"
   },
   "peerDependencies": {
-    "eslint": ">= 3"
+    "eslint": "^5.0.0 || ^6.0.0"
   }
 }
