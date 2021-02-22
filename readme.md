@@ -32,3 +32,10 @@ Add this snippet in to package.json inside `fe-src` directory
   ]
 }
 ```
+
+#Update
+Use npm to update the package.json version
+
+``
+npm version patch
+``
