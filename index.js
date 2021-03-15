@@ -2,11 +2,18 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:vue/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   env: {
       'es6': true,
       'node': true,
       'browser': true
+  },
+  plugins: [
+    '@typescript-eslint',
+  ],
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
   },
   rules: {
     // Eslint rule modifications
@@ -101,8 +108,5 @@ module.exports = {
     'no-invalid-this': 'off',
     'no-plusplus': 'off',
     'func-style': 'off',
-  },
-  parserOptions: {
-    parser: 'babel-eslint',
   },
 }
