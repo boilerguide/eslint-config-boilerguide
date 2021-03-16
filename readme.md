@@ -1,41 +1,15 @@
-#Integration
+# Usage
 
-##Connecting ESLINT to Vue.JS project
+## Using this ruleset within your project
 
-Add this snippet in to package.json inside `fe-src` directory
-
-```
-"eslintConfig": {
-  "root": true,
-  "env": {
-    "browser": true
-    "node": true
-  },
-  "extends": [
-    "plugin:vue/essential",
-    "eslint:recommended"
-  ],
-  "parserOptions": {
-    "parser": "babel-eslint"
-  },
-  "rules": {},
-  "overrides": [
-    {
-      "files": [
-        "**/__tests__/*.{j,t}s?(x)",
-        "**/tests/unit/**/*.spec.{j,t}s?(x)"
+1. Add this package as a dev dependency to your project
+    ``npm install eslint-config-boilerguide --save-dev`` or ``yarn add -D eslint-config-boilerguide``
+2. Add this snippet to your eslint config
+    ```
+      "extends": [
+        "boilerguide
       ],
-      "env": {
-        "mocha": true
-      }
-    }
-  ]
-}
-```
+    ```
 
-#Update
-Use npm to update the package.json version
-
-``
-npm version patch
-``
+# Developing
+Use yarn to update the package.json version i.e. ``yarn version --patch``
