@@ -12,4 +12,4 @@
     ```
 
 # Developing
-Use yarn to update the package.json version i.e. ``yarn version --patch``
+Publishing to the NPM registry is handled by github actions when a [new github release is created](https://github.com/boilerguide/eslint-config-boilerguide/releases/new) 
