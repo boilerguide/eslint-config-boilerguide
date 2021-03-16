@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-boilerguide",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Boiler Guide Development Team <development@boilerguide.co.uk> (https://www.boilerguide.co.uk)",
   "homepage": "https://github.com/boilerguide/eslint-config-boilerguide#readme",
   "license": "MIT",
